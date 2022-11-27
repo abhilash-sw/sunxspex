@@ -178,9 +178,9 @@ def load_chianti_continuum():
     return continuum_intensities
 
 
-@manager.require('xray_abundances',
-                 ['https://hesperia.gsfc.nasa.gov/ssw/packages/xray/dbase/chianti/xray_abun_file.genx'],
-                 '92c0e1f9a83da393cc38840752fda5a5b44c5b18a4946e5bf12c208771fe0fd3')
+#@manager.require('xray_abundances',
+#                 ['https://hesperia.gsfc.nasa.gov/ssw/packages/xray/dbase/chianti/xray_abun_file.genx'],
+#                 '92c0e1f9a83da393cc38840752fda5a5b44c5b18a4946e5bf12c208771fe0fd3')
 def load_xray_abundances(abundance_type=None):
     """
     Returns the abundances written in the xray_abun_file.genx
@@ -214,7 +214,9 @@ def load_xray_abundances(abundance_type=None):
     # If kwargs not set, set defaults
     if abundance_type is None:
         abundance_type = "sun_coronal"
-    xray_abundance_file = manager.get("xray_abundances")
+    abs_path = os.path.dirname(__file__)
+    chianti_path = os.path.join(abs_path,'data/xray_ssw/chianti')
+    xray_abundance_file = f'{chianti_path}/xray_abun_file.genx'#manager.get("xray_abundances")
     # Read file
     contents = read_abundance_genx(xray_abundance_file)
     # Restructure data into an easier form.
