@@ -14,6 +14,8 @@ import os
 __all__ = ['thermal_emission', 'continuum_emission', 'line_emission',
            'setup_continuum_parameters', 'setup_line_parameters', 'setup_default_abundances']
 
+abs_path = os.path.dirname('___PATH_TO_CHIANTI_FILES___')
+
 doc_string_params = """
 Parameters
 ----------
@@ -184,7 +186,7 @@ def setup_default_abundances(filename=None):
 
 
 # Read line, continuum and abundance data into global variables.
-abs_path = os.path.dirname(__file__)
+
 chianti_path = os.path.join(abs_path,'data/xray_ssw/chianti')
 CONTINUUM_GRID = setup_continuum_parameters(f'{chianti_path}/chianti_cont_1_250_v71.sav')
 LINE_GRID = setup_line_parameters(f'{chianti_path}/chianti_lines_1_10_v71.sav')
