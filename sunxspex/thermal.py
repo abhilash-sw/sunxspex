@@ -14,7 +14,7 @@ import os
 __all__ = ['thermal_emission', 'continuum_emission', 'line_emission',
            'setup_continuum_parameters', 'setup_line_parameters', 'setup_default_abundances']
 
-abs_path = os.path.dirname('___PATH_TO_SUNXSPEX___')
+abs_path = '___PATH_TO_SUNXSPEX___'
 
 doc_string_params = """
 Parameters
@@ -187,7 +187,7 @@ def setup_default_abundances(filename=None):
 
 # Read line, continuum and abundance data into global variables.
 
-chianti_path = os.path.join(abs_path,'data/xray_ssw/chianti')
+chianti_path = os.path.join(abs_path,'data/xray_ssw/dbase/chianti')
 CONTINUUM_GRID = setup_continuum_parameters(f'{chianti_path}/chianti_cont_1_250_v71.sav')
 LINE_GRID = setup_line_parameters(f'{chianti_path}/chianti_lines_1_10_v71.sav')
 DEFAULT_ABUNDANCES = setup_default_abundances(f'{chianti_path}/xray_abun_file.genx')

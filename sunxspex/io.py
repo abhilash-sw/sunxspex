@@ -15,7 +15,7 @@ import os
 __all__ = ['load_chianti_lines_lite', 'load_chianti_continuum',
            'read_abundance_genx', 'load_xray_abundances']
 
-abs_path = os.path.dirname('___PATH_TO_SUNXSPEX___')
+abs_path = '___PATH_TO_SUNXSPEX___'
 
 @manager.require('chianti_lines',
                  ['https://hesperia.gsfc.nasa.gov/ssw/packages/xray/dbase/chianti/chianti_lines_1_10_v71.sav'],
@@ -217,8 +217,8 @@ def load_xray_abundances(abundance_type=None):
     # If kwargs not set, set defaults
     if abundance_type is None:
         abundance_type = "sun_coronal"
-    abs_path = os.path.dirname(__file__)
-    chianti_path = os.path.join(abs_path,'data/xray_ssw/chianti')
+    #abs_path = os.path.dirname(__file__)
+    chianti_path = os.path.join(abs_path,'data/xray_ssw/dbase/chianti')
     xray_abundance_file = f'{chianti_path}/xray_abun_file.genx'#manager.get("xray_abundances")
     # Read file
     contents = read_abundance_genx(xray_abundance_file)
