@@ -10,10 +10,12 @@ from astropy.table import Table
 from sunpy.data import manager
 from sunpy.io.special.genx import read_genx
 
+import os
+
 __all__ = ['load_chianti_lines_lite', 'load_chianti_continuum',
            'read_abundance_genx', 'load_xray_abundances']
 
-abs_path = os.path.dirname('___PATH_TO_CHIANTI_FILES___')
+abs_path = os.path.dirname('___PATH_TO_SUNXSPEX___')
 
 @manager.require('chianti_lines',
                  ['https://hesperia.gsfc.nasa.gov/ssw/packages/xray/dbase/chianti/chianti_lines_1_10_v71.sav'],
