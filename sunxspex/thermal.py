@@ -14,7 +14,7 @@ import os
 __all__ = ['thermal_emission', 'continuum_emission', 'line_emission',
            'setup_continuum_parameters', 'setup_line_parameters', 'setup_default_abundances']
 
-abs_path = ''~/sunxspex/sunxspex''#'___PATH_TO_SUNXSPEX___'
+abs_path = '~/sunxspex/sunxspex' #'___PATH_TO_SUNXSPEX___'
 
 doc_string_params = """
 Parameters
